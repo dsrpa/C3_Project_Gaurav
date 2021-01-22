@@ -43,7 +43,14 @@ public class RestaurantService {
 	 */
 	public int getTotalPrice(final List<String> itemNames) {
 		int sum = 0;
-
+		for (final String itemName : itemNames) {
+			for (final Restaurant restaurant : restaurants) {
+				final Item item = restaurant.findItemByName(itemName);
+				if (item != null) {
+					sum = sum + item.getPrice();
+				}
+			}
+		}
 		return sum;
 	}
 
@@ -51,6 +58,7 @@ public class RestaurantService {
 	 * Clears the restaurants list
 	 */
 	public void clearRestaurants() {
+		restaurants.clear();
 	}
 
 }
