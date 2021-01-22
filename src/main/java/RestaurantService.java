@@ -33,4 +33,24 @@ public class RestaurantService {
 		return restaurants;
 	}
 
+	// TDD SOLUTION
+	/**
+	 * Gets the total cost of the menu items, loop over all restaurants,
+	 * and then loop over all the items and find their prices for a match and sum
+	 *
+	 * @param itemNames items to find
+	 * @return total sum of the items
+	 */
+	public int getTotalPrice(final List<String> itemNames) {
+		int sum = 0;
+
+		return sum;
+	}
+
+	/**
+	 * Clears the restaurants list
+	 */
+	public void clearRestaurants() {
+	}
+
 }

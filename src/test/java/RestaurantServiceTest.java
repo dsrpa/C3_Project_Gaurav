@@ -70,5 +70,23 @@ public class RestaurantServiceTest {
 	}
 	//<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+	// TDD failed test case
+	/*Get Total Price*/
+	@Test
+	public void get_total_price_should_return_sum_of_all_items_price() {
+		final List<String> items = new ArrayList<>();
+		items.add(SWEET_CORN_SOUP);
+		items.add(VEGETABLE_LASAGNE);
+		final int actualTotalPrice = service.getTotalPrice(items);
+		assertEquals(388, actualTotalPrice);
+	}
+
+	/**
+	 * Calls after every test to clear the data
+	 */
+	@AfterEach
+	public void tearDown() {
+		service.clearRestaurants();
+	}
 
 }
